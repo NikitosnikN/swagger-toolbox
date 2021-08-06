@@ -97,6 +97,13 @@ function buildSwaggerJSON(data) {
           };
           if (showExample === true) op.properties[x].example = value;
           break;
+        case "null":
+          op.properties[x] = {
+            type: "string",
+            'x-nullable': true,
+          }
+          if (showExample === true) op.properties[x].example = "null";
+          break;
         case "object":
           op.properties[x] = buildSwaggerJSON(data[x]);
           op.properties[x].type = "object";
