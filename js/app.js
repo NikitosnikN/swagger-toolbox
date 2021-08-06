@@ -30,7 +30,6 @@ function processJSON() {
   if (this.tryParseJSON(jsonString) === true) {
     var json = JSON.parse(jsonString);
     var yamlReady = this.buildSwaggerJSON(json);
-    console.log(yamlReady);
     jsonEditor2.setValue(JSON.stringify(yamlReady, null, 4));
     var x = stringify(yamlReady);
     yamlEditor.setValue(x);
